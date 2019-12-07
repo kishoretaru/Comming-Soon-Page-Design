@@ -1,0 +1,128 @@
+<?php
+
+    if (isset($_POST['submit'])) {
+
+        $from = $_POST['email'];
+        $to = 'tarunkishore017@gmail.com';
+        $subject = 'Email signup';
+        $body = 'Please sign me up to the mailing list';
+
+        if (!$_POST['email']) {
+            $emailError = '<div class="text-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp;Please enter a valid email address</div>';
+        }
+
+        if (!$emailError) {
+            if (mail ($to, $subject, $body, $from)) {
+                $result = '<div class="text-success"><i class="fa fa-check" aria-hidden="true"></i> &nbspthank you we\'ll keep you updated</div>';
+            } else {
+                $result = '<div class="text-danger"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp;sorry there has been an error, please try again</div>';
+            }
+        }
+
+    }
+
+?>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<section id="logo">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img src="img/my-logo.png" class="img-fluid"/>
+        </div>
+      </div>
+      </div>
+
+</section>
+
+<section id="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+<p>We're trying hard,we will be back soon..<p>
+        </div>
+      </div>
+      </div>
+
+</section>
+
+<section id="counter">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+<div class="countdown">
+  </div>
+        </div>
+      </div>
+      </div>
+
+      <section id="icons">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+      <ul class="list-inline">
+<a href="https://www.twiter.com" target="blank"><li class="list-inline-item"><i class="fab twitter fa-twitter-square fa-3x"></i></li></a>
+<a href="https://www.facebook.com" target="blank"><li class="list-inline-item"><i class="fab facebook fa-facebook-square fa-3x"></i></li></a>
+<a href="https://www.instagram.com" target="blank"> <li class="list-inline-item"> <i class="fab instagram fa-instagram fa-3x"></i> </li> </a>
+<a href="https://www.google.com" target="blank"> <li class="list-inline-item"> <i class="fab google fa-google fa-3x"></i> </li> </a>
+
+        </ul>
+              </div>
+            </div>
+            </div>
+
+
+</section>
+
+<section id="signup">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+                <form class="form-inline" role="form" method="post" action="#signup">
+                    <input type="email" class="form-control form-control-sm" name="email" placeholder="enter your email">
+                    <button type="submit" class="btn btn-signup btn-sm" name="submit" value="send">find out more</button>
+                </form>
+                <?php echo $emailError;?>
+                <?php echo $result;?>
+
+
+            </div>
+
+        </div>
+    </div>
+  </section>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e1e9d9bdd9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+    <script>
+      $(function() {
+    $('.countdown').countdown({
+        date: "June 7, 2087 15:03:26"
+    });
+});
+    </script>
+
+  </body>
+</html>
